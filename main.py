@@ -12,6 +12,8 @@ Indonesia's Vice President Gibran Rakabuming Raka handed his resignation to Pres
 
 
 def main() -> None:
+    if not (1 <= len(SUMMARY) <= 2000):
+        raise SystemExit(f"SUMMARY length {len(SUMMARY)} out of bounds [1, 2000]")
     output_dir = Path("/output")
     output_dir.mkdir(parents=True, exist_ok=True)
     entry_path = output_dir / "entry.txt"
