@@ -11,9 +11,13 @@ In Antalya, Turkey, leaders opened speeches at the UN COP31 climate summit, wher
 Indonesia's Vice President Gibran Rakabuming Raka handed his resignation to President Prabowo Subianto in Jakarta, Reuters reported, opening a constitutional process for parliament to choose a successor. In Washington, the Republican-led House voted 211-204 to send impeachment articles against Defense Secretary Pete Hegseth to committee, shelving the effort for this Congress, the BBC reported. Democrat Scott Colom won Mississippi's Senate election, AP projected, adding to Democratic gains from the 3 November congressional elections. Brent crude settled up 1.4% at $92.76 a barrel on Iran and Strait of Hormuz uncertainty, and the Nasdaq rose 1.6% as AI shares, led by CoreWeave's 24.7% jump, powered a Wall Street rebound."""
 
 
+def _check_length(text: str) -> None:
+    if not (1 <= len(text) <= 2000):
+        raise SystemExit(f"SUMMARY length {len(text)} out of bounds [1, 2000]")
+
+
 def main() -> None:
-    if not (1 <= len(SUMMARY) <= 2000):
-        raise SystemExit(f"SUMMARY length {len(SUMMARY)} out of bounds [1, 2000]")
+    _check_length(SUMMARY)
     output_dir = Path("/output")
     output_dir.mkdir(parents=True, exist_ok=True)
     entry_path = output_dir / "entry.txt"
