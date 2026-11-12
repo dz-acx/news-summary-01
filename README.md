@@ -1,0 +1,1 @@
+The script main.py deterministically writes a fixed English summary of the world news of 11 November 2026 to /output/entry.txt. It relies solely on the Python standard library with no third-party dependencies. When executed, it ensures the destination directory exists and outputs the text exactly encoded as UTF-8.
